@@ -8,18 +8,77 @@
 
 #import "AppDelegate.h"
 
+#import "LoginVC.h"
+#import "WecomeVC.h"
+#import "HqRootVC.h"
+
+#import "RegistVC.h"
+#import <AssertMacros.h>
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
++ (AppDelegate *)shareApp{
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return app;
+}
++ (void)setRootVC:(HqSetRootVC)type{
+    AppDelegate *app = [AppDelegate shareApp];
+    [app _setRootVC:type];
+}
+- (void)_setRootVC:(HqSetRootVC)type{
+    
+    
+    switch (type) {
+            case HqSetRootVCLogin:{
+                LoginVC *loginVC = [[LoginVC alloc] init];
+                self.window.rootViewController = loginVC;
+                ;
+                
+            }
+            break;
+            case HqSetRootVCWecome:{
+                
+                WecomeVC *welcomVC = [[WecomeVC alloc] init];
+                SuperNavigationVC *navRootVC = [[SuperNavigationVC alloc] initWithRootViewController:welcomVC];
+                self.window.rootViewController = navRootVC;
+                
+                //                RegistVC *loginVC = [[RegistVC alloc] init];
+                //                self.window.rootViewController = loginVC;
+            }
+            break;
+            case HqSetRootVCHome:{
+                HqRootVC *rootVC = [[HqRootVC alloc] init];
+                SuperNavigationVC *navRootVC = [[SuperNavigationVC alloc] initWithRootViewController:rootVC];
+                self.window.rootViewController = navRootVC;
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    //    NSLog(@"ppppp= %@",[NSString sha1:@"aaa111"]);
+    
+    
+    NSString *token = GetUserDefault(kToken);
+    NSString *isLogin = GetUserDefault(kisLogin);
+    if(token.length&&isLogin.boolValue){
+        _isInputGesturePassword = YES;
+        [AppDelegate setRootVC:HqSetRootVCHome];
+    }else{
+        [AppDelegate setRootVC:HqSetRootVCLogin];
+    }
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
