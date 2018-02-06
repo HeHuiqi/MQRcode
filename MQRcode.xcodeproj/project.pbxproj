@@ -196,6 +196,11 @@
 		8EF609AC2028621C009C2A9A /* HqGenerateCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF609AB2028621C009C2A9A /* HqGenerateCodeVC.m */; };
 		8EF609AF20286719009C2A9A /* home_set_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF609AD20286719009C2A9A /* home_set_icon@2x.png */; };
 		8EF609B020286719009C2A9A /* home_set_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF609AE20286719009C2A9A /* home_set_icon@3x.png */; };
+		8EF609B320294EF0009C2A9A /* HqChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF609B220294EF0009C2A9A /* HqChangePasswordVC.m */; };
+		8EF609B620298105009C2A9A /* HqBillTypeChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF609B520298105009C2A9A /* HqBillTypeChooseView.m */; };
+		8EF609C2202995AF009C2A9A /* HqTradeStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF609C1202995AF009C2A9A /* HqTradeStatusVC.m */; };
+		8EF609C62029A01E009C2A9A /* no_bill_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF609C42029A01E009C2A9A /* no_bill_icon@3x.png */; };
+		8EF609C72029A01E009C2A9A /* no_bill_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF609C52029A01E009C2A9A /* no_bill_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -495,6 +500,14 @@
 		8EF609AB2028621C009C2A9A /* HqGenerateCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqGenerateCodeVC.m; sourceTree = "<group>"; };
 		8EF609AD20286719009C2A9A /* home_set_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_set_icon@2x.png"; sourceTree = "<group>"; };
 		8EF609AE20286719009C2A9A /* home_set_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_set_icon@3x.png"; sourceTree = "<group>"; };
+		8EF609B120294EF0009C2A9A /* HqChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqChangePasswordVC.h; sourceTree = "<group>"; };
+		8EF609B220294EF0009C2A9A /* HqChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqChangePasswordVC.m; sourceTree = "<group>"; };
+		8EF609B420298105009C2A9A /* HqBillTypeChooseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqBillTypeChooseView.h; sourceTree = "<group>"; };
+		8EF609B520298105009C2A9A /* HqBillTypeChooseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqBillTypeChooseView.m; sourceTree = "<group>"; };
+		8EF609C0202995AF009C2A9A /* HqTradeStatusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTradeStatusVC.h; sourceTree = "<group>"; };
+		8EF609C1202995AF009C2A9A /* HqTradeStatusVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTradeStatusVC.m; sourceTree = "<group>"; };
+		8EF609C42029A01E009C2A9A /* no_bill_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_bill_icon@3x.png"; sourceTree = "<group>"; };
+		8EF609C52029A01E009C2A9A /* no_bill_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_bill_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -867,6 +880,7 @@
 		8EF607B92027F48C009C2A9A /* HqImages */ = {
 			isa = PBXGroup;
 			children = (
+				8EF609C32029A01E009C2A9A /* Bill */,
 				8EF607BA2027F48C009C2A9A /* pay_close_icon@2x.png */,
 				8EF607BB2027F48C009C2A9A /* Home */,
 				8EF607D82027F48C009C2A9A /* back@2x.png */,
@@ -1000,6 +1014,8 @@
 				8EF608082027F48C009C2A9A /* RegistVC.h */,
 				8EF608052027F48C009C2A9A /* RegistVC.m */,
 				8EF608092027F48C009C2A9A /* Views */,
+				8EF609B120294EF0009C2A9A /* HqChangePasswordVC.h */,
+				8EF609B220294EF0009C2A9A /* HqChangePasswordVC.m */,
 			);
 			path = "Login&Regist";
 			sourceTree = "<group>";
@@ -1053,10 +1069,10 @@
 		8EF6081D2027F48C009C2A9A /* SuperVC */ = {
 			isa = PBXGroup;
 			children = (
-				8EF6081E2027F48C009C2A9A /* SuperNavigationVC.m */,
-				8EF6081F2027F48C009C2A9A /* SuperVC.m */,
-				8EF608202027F48C009C2A9A /* SuperVC.h */,
 				8EF608212027F48C009C2A9A /* SuperNavigationVC.h */,
+				8EF6081E2027F48C009C2A9A /* SuperNavigationVC.m */,
+				8EF608202027F48C009C2A9A /* SuperVC.h */,
+				8EF6081F2027F48C009C2A9A /* SuperVC.m */,
 			);
 			path = SuperVC;
 			sourceTree = "<group>";
@@ -1064,10 +1080,12 @@
 		8EF608222027F48C009C2A9A /* HqTrade */ = {
 			isa = PBXGroup;
 			children = (
+				8EF608272027F48C009C2A9A /* HqTradeRecordVC.h */,
 				8EF608232027F48C009C2A9A /* HqTradeRecordVC.m */,
 				8EF608242027F48C009C2A9A /* Models */,
-				8EF608272027F48C009C2A9A /* HqTradeRecordVC.h */,
 				8EF608282027F48C009C2A9A /* Views */,
+				8EF609C0202995AF009C2A9A /* HqTradeStatusVC.h */,
+				8EF609C1202995AF009C2A9A /* HqTradeStatusVC.m */,
 			);
 			path = HqTrade;
 			sourceTree = "<group>";
@@ -1085,9 +1103,11 @@
 			isa = PBXGroup;
 			children = (
 				8EF608292027F48C009C2A9A /* HqBillCell.h */,
-				8EF6082A2027F48C009C2A9A /* HqNoContentView.m */,
-				8EF6082B2027F48C009C2A9A /* HqNoContentView.h */,
 				8EF6082C2027F48C009C2A9A /* HqBillCell.m */,
+				8EF6082B2027F48C009C2A9A /* HqNoContentView.h */,
+				8EF6082A2027F48C009C2A9A /* HqNoContentView.m */,
+				8EF609B420298105009C2A9A /* HqBillTypeChooseView.h */,
+				8EF609B520298105009C2A9A /* HqBillTypeChooseView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1247,9 +1267,9 @@
 			isa = PBXGroup;
 			children = (
 				8EF6086D2027F48C009C2A9A /* HqConfirmPayView.h */,
+				8EF608702027F48C009C2A9A /* HqConfirmPayView.m */,
 				8EF6086E2027F48C009C2A9A /* HqMyPayCodeView.h */,
 				8EF6086F2027F48C009C2A9A /* HqMyPayCodeView.m */,
-				8EF608702027F48C009C2A9A /* HqConfirmPayView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1272,6 +1292,15 @@
 				8EF609A8202836E4009C2A9A /* HqProduct.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8EF609C32029A01E009C2A9A /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				8EF609C42029A01E009C2A9A /* no_bill_icon@3x.png */,
+				8EF609C52029A01E009C2A9A /* no_bill_icon@2x.png */,
+			);
+			path = Bill;
 			sourceTree = "<group>";
 		};
 		A7C89EE01532CC6FAF1D443A /* Pods */ = {
@@ -1387,9 +1416,11 @@
 				8EF608B72027F48C009C2A9A /* pay_code_icon@3x.png in Resources */,
 				8EF608C82027F48C009C2A9A /* back@2x.png in Resources */,
 				8EF608DE2027F48C009C2A9A /* card_photo_icon@2x.png in Resources */,
+				8EF609C62029A01E009C2A9A /* no_bill_icon@3x.png in Resources */,
 				8EF608BB2027F48C009C2A9A /* home_cards_icon@2x.png in Resources */,
 				8EF608AA2027F48C009C2A9A /* MBProgressHUD.bundle in Resources */,
 				8EF609232028140D009C2A9A /* push_icon@2x.png in Resources */,
+				8EF609C72029A01E009C2A9A /* no_bill_icon@2x.png in Resources */,
 				8EF609AF20286719009C2A9A /* home_set_icon@2x.png in Resources */,
 				8EF608C02027F48C009C2A9A /* home_menu_icon@3x.png in Resources */,
 				8EF608EE2027F48C009C2A9A /* delete_icon@3x.png in Resources */,
@@ -1577,11 +1608,13 @@
 				8EF608A22027F48C009C2A9A /* IQUIView+Hierarchy.m in Sources */,
 				8EF608802027F48C009C2A9A /* NSNumber+Extension.m in Sources */,
 				8EF6090C2027F48C009C2A9A /* HqCardDetailVC.m in Sources */,
+				8EF609B620298105009C2A9A /* HqBillTypeChooseView.m in Sources */,
 				8EF608F12027F48C009C2A9A /* HqSetLoginPassword.m in Sources */,
 				8EF608852027F48C009C2A9A /* HqDateFormatter.m in Sources */,
 				8EF609122027F48C009C2A9A /* HqCardCell.m in Sources */,
 				8EF609012027F48C009C2A9A /* HqHomeNews.m in Sources */,
 				8EF6087B2027F48C009C2A9A /* HqPickerView.m in Sources */,
+				8EF609C2202995AF009C2A9A /* HqTradeStatusVC.m in Sources */,
 				8EF608902027F48C009C2A9A /* UIImage+ImageSize.m in Sources */,
 				8EF608F22027F48C009C2A9A /* HqInputView.m in Sources */,
 				8EF608922027F48C009C2A9A /* SGQRCodeScanningView.m in Sources */,
@@ -1596,6 +1629,7 @@
 				8EF6087D2027F48C009C2A9A /* HqHttpUtil.m in Sources */,
 				8EF609142027F48C009C2A9A /* HqScanPayVC.m in Sources */,
 				8EF609022027F48C009C2A9A /* HqRootVC.m in Sources */,
+				8EF609B320294EF0009C2A9A /* HqChangePasswordVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

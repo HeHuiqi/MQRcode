@@ -18,7 +18,7 @@
 @property (nonatomic,assign) double payTime;//支付时间
 @property (nonatomic,assign) float amount;//消费金额
 @property (nonatomic,copy) NSString *collectCode;
-@property (nonatomic,assign) NSInteger status;//1支出，2收入
+@property (nonatomic,assign) NSInteger status;//1成功，0失败
 @property (nonatomic,copy) NSString *currency;//货币种类
 
 @end

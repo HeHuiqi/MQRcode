@@ -60,6 +60,19 @@
 }
 - (void)setup{
     
+    UILabel *titleLab  = [[UILabel alloc]init];
+    titleLab.text = @"This bar code is limited to payment to merchants";
+    titleLab.font = [UIFont systemFontOfSize:kZoomValue(16)];
+    titleLab.textColor = COLORA(168,168,168);
+    titleLab.numberOfLines = 0;
+    titleLab.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:titleLab];
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self);
+        make.top.equalTo(self).offset(kZoomValue(86));
+    }];
+    
+    /*
     _contentView = [[UIView alloc]init];
     _contentView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_contentView];
@@ -69,27 +82,53 @@
         make.centerX.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(kZoomValue(290), kZoomValue(290)));
     }];
+    */
     _payCodeImageView = [[UIImageView alloc]init];
     _payCodeImageView.backgroundColor = [UIColor grayColor];
-    [_contentView addSubview:_payCodeImageView];
+    [self addSubview:_payCodeImageView];
     [_payCodeImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_contentView);
-        make.centerY.equalTo(_contentView);
-        make.size.mas_equalTo(CGSizeMake(kZoomValue(240), kZoomValue(240)));
+        make.centerX.equalTo(self);
+        make.centerY.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(kZoomValue(190), kZoomValue(190)));
     }];
+    
+    UIView *xline = [[UIView alloc] init];
+    [xline.layer addSublayer:[self dotteViewLayer]];
+    [self addSubview:xline];
+    [xline mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(kZoomValue(50));
+        make.right.equalTo(self).offset(kZoomValue(-50));
+        make.top.equalTo(_payCodeImageView.mas_bottom).offset(kZoomValue(41));
+        make.height.mas_equalTo(10);
+    }];
+    
     _infoLab = [[UILabel alloc]init];
     _infoLab.text = @"Please scan the above MQR Code for payment";
-    _infoLab.font = [UIFont systemFontOfSize:kZoomValue(15)];
+    _infoLab.font = [UIFont systemFontOfSize:kZoomValue(17)];
     _infoLab.numberOfLines = 0;
     _infoLab.textAlignment = NSTextAlignmentCenter;
-    [_contentView addSubview:_infoLab];
+    [self addSubview:_infoLab];
     [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_contentView);
-        make.top.equalTo(_contentView.mas_bottom).offset(kZoomValue(32));
+        make.centerX.equalTo(self);
+        make.top.equalTo(_payCodeImageView.mas_bottom).offset(kZoomValue(58));
     }];
     
 }
+- (CALayer *)dotteViewLayer{
+    
+    CAShapeLayer *dotteShapeLayer = [CAShapeLayer layer];
+    dotteShapeLayer.fillColor = [UIColor clearColor].CGColor;
+    dotteShapeLayer.strokeColor = COLOR(194,82,30,1).CGColor;
+    dotteShapeLayer.lineWidth = LineHeight ;
+    NSArray *dotteShapeArr = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:3],[NSNumber numberWithInt:2], nil];
+    dotteShapeLayer.lineDashPattern = dotteShapeArr;
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint:CGPointMake(0, 0)];
+    [bezierPath addLineToPoint:CGPointMake(SCREEN_WIDTH-kZoomValue(50)*2, 0)];
+    dotteShapeLayer.path = bezierPath.CGPath;
 
+    return dotteShapeLayer;
+}
 
 - (void)generateCode{
     

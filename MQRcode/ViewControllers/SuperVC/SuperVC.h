@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#define BarHeight 64
+#define HqTitleColor [UIColor whiteColor]
+#define HqShadowHeight 2
+#define HqBarShadowHeight (BarHeight+HqShadowHeight)
 @interface SuperVC : UIViewController
 
 @property (nonatomic,strong) UIView *navBarView;
@@ -20,6 +23,8 @@
 
 @property (nonatomic,assign) BOOL isShowBottomLine;
 @property (nonatomic,strong) UIView *bottomLine;
+
+@property (nonatomic,strong) UIBezierPath *shadowPath;
 
 -(void)backClick;
 - (void)backToVC:(NSString *)vcName;

@@ -23,7 +23,7 @@
     [self.view addSubview:self.payCodeView];
     self.title = @"MQR Code";
     self.payCodeView.hidden = YES;
-    self.payCodeView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.payCodeView.backgroundColor = [UIColor whiteColor];
     [self getPayCode];
 
 }

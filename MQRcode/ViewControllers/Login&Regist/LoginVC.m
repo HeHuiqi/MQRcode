@@ -53,7 +53,7 @@
     }];
     
     
-    CGFloat inputHeight = 56;
+    CGFloat inputHeight = 45;
     CGFloat leftSpace = 0;
     
     UIColor *inputBgColor = COLORA(79,161,218);

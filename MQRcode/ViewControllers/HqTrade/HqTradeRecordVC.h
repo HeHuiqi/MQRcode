@@ -10,4 +10,5 @@
 
 @interface HqTradeRecordVC : SuperVC
 
+
 @end

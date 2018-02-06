@@ -20,6 +20,8 @@
 #import "HqTradeRecordVC.h"
 #import "HqHomeNews.h"
 #import "HqProductVC.h"
+#import "HqChangePasswordVC.h"
+
 
 #define LeftWidth (SCREEN_WIDTH - kZoomValue(52))
 #define LeftAlpha 0.7
@@ -60,7 +62,7 @@
     [self.view addSubview:self.mainOverView];
     [self.view addSubview:self.leftView];
     [self addGesture];
-    
+   
     NSString *token = GetUserDefault(kToken);
     NSLog(@"token==%@",token);
 }
@@ -103,7 +105,7 @@
 }
 - (void)headerView{
     [self.view addSubview:self.topHeaderView];
-    
+    [self.topHeaderView sendSubviewToBack:self.navBarView];
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topHeaderView.frame), SCREEN_WIDTH, kZoomValue(HqFuctionViewHeight))];
     header.backgroundColor = AppMainColor;
     NSArray *titles = @[@"Messages",@"Scan QR",@"Generate QR"];
@@ -365,7 +367,8 @@
             break;
         case 2:
         {
-           
+            HqChangePasswordVC *password = [[HqChangePasswordVC alloc] init];
+            Push(password);
         }
             break;
         case 3:

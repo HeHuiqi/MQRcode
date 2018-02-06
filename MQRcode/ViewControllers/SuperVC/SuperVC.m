@@ -7,8 +7,7 @@
 //
 
 #import "SuperVC.h"
-#define BarHeight 64
-#define HqTitleColor [UIColor whiteColor]
+
 @interface SuperVC ()
 
 @end
@@ -23,9 +22,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.navBarView];
-//    self.navBarView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.navBarView.backgroundColor  = AppMainColor;
     [self titelLab];
+ 
     
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.leftBtnImageName = nil;
@@ -90,7 +89,7 @@
 }
 - (void)setRightBtnImageName:(NSString *)rightBtnImageName{
     
-    UIImage * image = [UIImage imageNamed:rightBtnImageName];
+    UIImage *image = [UIImage imageNamed:rightBtnImageName];
     
     [_rightBtn setImage:image forState:UIControlStateNormal];
 }
@@ -104,7 +103,20 @@
         _navBarView.backgroundColor = [UIColor whiteColor];
     }
     
+   
+
     return _navBarView;
+}
+- (UIBezierPath *)shadowPath{
+    if(!_shadowPath){
+    _navBarView.layer.shadowColor = [UIColor redColor].CGColor;
+    _navBarView.layer.shadowOpacity = 1.0;
+    _navBarView.layer.shadowOffset = CGSizeMake(_navBarView.bounds.size.width, HqShadowHeight);
+    CGFloat shadowHeight = HqShadowHeight;
+    UIBezierPath *shadowdPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, _navBarView.bounds.size.height+shadowHeight, _navBarView.bounds.size.width, shadowHeight)];
+        _shadowPath = shadowdPath;
+    }
+    return _shadowPath;
 }
 - (void)setIsShowBottomLine:(BOOL)isShowBottomLine{
     _isShowBottomLine = isShowBottomLine;

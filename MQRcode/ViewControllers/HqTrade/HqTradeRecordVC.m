@@ -9,11 +9,23 @@
 #import "HqTradeRecordVC.h"
 #import "HqBillCell.h"
 #import "HqNoContentView.h"
-@interface HqTradeRecordVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "HqBillTypeChooseView.h"
+#import "HqTradeStatusVC.h"
 
-@property (nonatomic,strong) UITableView *tableView;
+@interface HqTradeRecordVC ()<HqBillTypeChooseViewDelegate,UIScrollViewDelegate>
+
+@property (nonatomic,strong) UIScrollView *contentView;
 @property (nonatomic,strong) NSMutableArray *records;
+@property (nonatomic,strong) NSMutableArray *successRecords;
+@property (nonatomic,strong) NSMutableArray *failureRecords;
+
 @property (nonatomic,strong) HqNoContentView *noContentView;
+@property (nonatomic,strong) HqBillTypeChooseView *chooseView;
+
+@property (nonatomic,strong) HqTradeStatusVC *allBillVC;
+@property (nonatomic,strong) HqTradeStatusVC *succcessBillVC;
+@property (nonatomic,strong) HqTradeStatusVC *failureBillVC;
+
 
 
 @end
@@ -24,6 +36,9 @@
     [super viewDidLoad];
     self.title = @"Transaction record";
     _records = [[NSMutableArray alloc] init];
+    _successRecords = [[NSMutableArray alloc] init];
+    _failureRecords = [[NSMutableArray alloc] init];
+
     [self getBillList];
     [self initView];
 }
@@ -38,55 +53,89 @@
                 for (NSDictionary *dic in orders) {
                     HqBill *bill = [HqBill mj_objectWithKeyValues:dic];
                     [_records addObject:bill];
+                    if(bill.status == 1){
+                        [_successRecords addObject:bill];
+                    }
+                    if(bill.status == 0){
+                        [_failureRecords addObject:bill];
+                    }
                 }
-                _noContentView.hidden = (orders.count>0);
-                _tableView.hidden = (orders.count==0);
+                self.allBillVC.records = _records;
+                
+                self.succcessBillVC.records = _successRecords;
+                self.failureBillVC.records = _failureRecords;
             }else{
                 [Dialog simpleToast:msg];
             }
         }else{
             [Dialog simpleToast:kRequestError];
         }
-        [_tableView reloadData];
     }];
+}
+- (HqBillTypeChooseView *)chooseView{
+    if(!_chooseView){
+        _chooseView = [[HqBillTypeChooseView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 45)];
+        _chooseView.backgroundColor = AppMainColor;
+        _chooseView.delegate = self;
+        _chooseView.titles = @[@"All",@"SUCCESSFUL",@"FAILURE"];
+    }
+    return _chooseView;
+}
+- (HqTradeStatusVC *)allBillVC{
+    if(!_allBillVC){
+        _allBillVC = [[HqTradeStatusVC alloc] init];
+    }
+   return  _allBillVC;
+}
+- (HqTradeStatusVC *)succcessBillVC{
+    if(!_succcessBillVC){
+        _succcessBillVC = [[HqTradeStatusVC alloc] init];
+    }
+    return _succcessBillVC;
+}
+- (HqTradeStatusVC *)failureBillVC{
+    if(!_failureBillVC){
+        _failureBillVC = [[HqTradeStatusVC alloc] init];
+    }
+   return  _failureBillVC;
 }
 - (void)initView{
     self.isShowBottomLine = YES;
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH  , SCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
-    _tableView.separatorColor = LineColor;
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
-    _noContentView = [[HqNoContentView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH  , SCREEN_HEIGHT-64)];
-    _noContentView.centerIcon.image = [UIImage imageNamed:@""];
-    _noContentView.infoLab.text = @"no transcation record";
-    [self.view addSubview:_noContentView];
-    _noContentView.hidden = YES;
+    [self.view addSubview:self.chooseView];
+    CGFloat ctnHeight = SCREEN_HEIGHT-64-self.chooseView.bounds.size.height;
+    UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.chooseView.frame), SCREEN_WIDTH, ctnHeight)];
+    contentView.delegate = self;
+    contentView.pagingEnabled = YES;
+    contentView.bounces = NO;
+    contentView.contentSize = CGSizeMake(SCREEN_WIDTH*3, ctnHeight);
+    [self.view addSubview:contentView];
+    self.contentView = contentView;
     
+    [self addChildViewController:self.allBillVC];
+    [contentView addSubview:self.allBillVC.view];
+    self.allBillVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, ctnHeight);
     
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _records.count;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return kZoomValue(85)  ;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIndentfier = @"HqBillCell";
-    HqBillCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentfier];
-    if (!cell) {
-        cell = [[HqBillCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentfier];
-    }
-    
-    HqBill *bill = _records[indexPath.row];
-    cell.bill = bill;
-    
-    return cell;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self addChildViewController:self.succcessBillVC];
+    [contentView addSubview:self.succcessBillVC.view];
+    self.succcessBillVC.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, ctnHeight);
+
+    [self addChildViewController:self.failureBillVC];
+    [contentView addSubview:self.failureBillVC.view];
+    self.failureBillVC.view.frame = CGRectMake(SCREEN_WIDTH*2, 0, SCREEN_WIDTH, ctnHeight);
 }
 
+
+#pragma mark -
+- (void)hqBillTypeChooseView:(HqBillTypeChooseView *)view index:(NSInteger)index{
+    
+    NSLog(@"index==%@",@(index));
+    self.contentView.contentOffset = CGPointMake(SCREEN_WIDTH*index, 0);
+    
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    int  index = (int)(scrollView.contentOffset.x/SCREEN_WIDTH);
+    self.chooseView.selectedIndex = abs(index);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
