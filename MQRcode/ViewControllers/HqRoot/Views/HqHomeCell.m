@@ -17,42 +17,55 @@
     return self;
 }
 - (void)setup{
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
+    UIView *contentView = [[UIView alloc] init];
+    contentView.backgroundColor = [UIColor whiteColor];
+    contentView.layer.borderWidth = 1.0;
+    contentView.clipsToBounds = YES;
+    contentView.layer.borderColor = COLORA(229,233,234).CGColor;
+    [self addSubview:contentView];
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(kZoomValue(15));
+        make.right.equalTo(self).offset(kZoomValue(-15));
+        make.top.equalTo(self).offset(kZoomValue(5));
+        make.bottom.equalTo(self).offset(kZoomValue(-5));
+    }];
     _leftIcon = [[UIImageView alloc] init];
-    [self.contentView addSubview:_leftIcon];
+    [contentView addSubview:_leftIcon];
     [_leftIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(20);
-        make.centerY.equalTo(self.contentView);
+        make.left.equalTo(contentView).offset(kZoomValue(37));
+        make.centerY.equalTo(contentView);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
     
     _titleLab = [[UILabel alloc] init];
     _titleLab.textColor = COLORA(97, 97, 97);
     _titleLab.font = [UIFont systemFontOfSize:kZoomValue(16)];
-    [self.contentView addSubview:_titleLab];
+    [contentView addSubview:_titleLab];
     [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_leftIcon.mas_right).offset(kZoomValue(44));
-        make.top.equalTo(self.contentView).offset(kZoomValue(20));
+        make.left.equalTo(_leftIcon.mas_right).offset(kZoomValue(43));
+        make.bottom.equalTo(contentView.mas_centerY).offset(kZoomValue(-3));
     }];
     
     _contentLab = [[UILabel alloc] init];
     _contentLab.textColor = COLORA(97, 97, 97);
     _contentLab.font = [UIFont systemFontOfSize:kZoomValue(12)];
-    [self.contentView addSubview:_contentLab];
+    [contentView addSubview:_contentLab];
     _contentLab.numberOfLines = 0;
     [_contentLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_leftIcon.mas_right).offset(kZoomValue(44));
-        make.right.equalTo(self.contentView).offset(-kZoomValue(64));
-        make.top.equalTo(_titleLab.mas_bottom).offset(kZoomValue(6));
+        make.right.equalTo(contentView).offset(-kZoomValue(64));
+        make.top.equalTo(contentView.mas_centerY).offset(kZoomValue(3));
     }];
     
     
     _hotIcon = [[UIImageView alloc] init];
-    [self.contentView addSubview:_hotIcon];
+    [contentView addSubview:_hotIcon];
     _hotIcon.image = [UIImage imageNamed:@"hot"];
     [_hotIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(0);
-        make.top.equalTo(self.contentView).offset(0);
+        make.right.equalTo(contentView).offset(0);
+        make.top.equalTo(contentView).offset(0);
         make.size.mas_equalTo(CGSizeMake(kZoomValue(38), kZoomValue(37)));
     }];
     

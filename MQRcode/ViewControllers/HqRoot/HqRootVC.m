@@ -57,6 +57,7 @@
     self.topHeaderView.image = [UIImage imageNamed:@"home_header_bg"];
 
     [self.view addSubview:self.tableView];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 5)];
     
     [self.view addSubview:self.mainOverView];
@@ -131,8 +132,8 @@
         yline.backgroundColor = COLORA(229,233,234);
         [header addSubview:yline];
     }
-    header.layer.borderWidth = LineHeight;
-    header.layer.borderColor = COLORA(229,233,234).CGColor;
+    header.layer.borderWidth = 1.0;
+    header.layer.borderColor = COLOR(186,186,187,0.21).CGColor;
    
     [self.view addSubview:header];
     self.functionHeaderView = header;

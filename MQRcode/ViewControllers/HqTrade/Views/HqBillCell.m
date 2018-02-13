@@ -49,7 +49,7 @@
     
     _payamountLab = [[UILabel alloc] init];
     _payamountLab.font = [UIFont systemFontOfSize:kZoomValue(16)];
-    _payamountLab.textColor = COLORA(97, 97, 97);
+    _payamountLab.textColor = COLORA(252,115,0);
     [self addSubview:_payamountLab];
     [_payamountLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(-kZoomValue(15));

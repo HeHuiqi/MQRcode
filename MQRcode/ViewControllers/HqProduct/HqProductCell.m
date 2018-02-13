@@ -35,7 +35,7 @@
     }];
     
     _priceLab = [[UILabel alloc] init];
-    _priceLab.textColor = COLORA(97, 97, 97);
+    _priceLab.textColor = COLORA(252,115,0);
     _priceLab.font = [UIFont systemFontOfSize:kZoomValue(16)];
     [self.contentView addSubview:_priceLab];
     _priceLab.numberOfLines = 0;
