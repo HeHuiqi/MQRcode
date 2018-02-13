@@ -41,7 +41,7 @@
 }
 - (void)initView{
     
-    UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.navBarheight, SCREEN_WIDTH, SCREEN_HEIGHT)];
     contentView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT+400);
     contentView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:contentView];
@@ -251,7 +251,7 @@
         "success": true,
         "code": 1,
         "message": "Successful.",
-        "refCode": "R952748984642842624"
+        "refCode": "R952748984self.navBarheight2842624"
     }
     */
     NSString *url = [NSString stringWithFormat:@"/cards/%@/codes/%@",_cardNumber,_mobileInputView.inputView.text];

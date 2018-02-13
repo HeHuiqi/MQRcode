@@ -22,7 +22,7 @@
     [_leftIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(20);
         make.centerY.equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(80, 60));
     }];
     
     _titleLab = [[UILabel alloc] init];
@@ -51,6 +51,7 @@
     if(_product){
         _titleLab.text = [NSString stringWithFormat:@"%@*%@",_product.productName,@(_product.count)];
         _priceLab.text = [NSString stringWithFormat:@"%0.2f ₫",_product.price];
+        _leftIcon.image = [UIImage imageNamed:@"temp_product"];
         
     }
 }

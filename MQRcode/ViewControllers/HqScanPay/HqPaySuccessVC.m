@@ -21,7 +21,7 @@
     [self initView];
 }
 - (void)initView{
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.navBarheight, SCREEN_WIDTH, SCREEN_HEIGHT-self.navBarheight) style:UITableViewStyleGrouped];
     _tableView.separatorColor = LineColor;
     _tableView.delegate = self;
     _tableView.dataSource = self;

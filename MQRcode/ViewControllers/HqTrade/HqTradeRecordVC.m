@@ -74,7 +74,7 @@
 }
 - (HqBillTypeChooseView *)chooseView{
     if(!_chooseView){
-        _chooseView = [[HqBillTypeChooseView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 45)];
+        _chooseView = [[HqBillTypeChooseView alloc] initWithFrame:CGRectMake(0, self.navBarheight, SCREEN_WIDTH, 45)];
         _chooseView.backgroundColor = AppMainColor;
         _chooseView.delegate = self;
         _chooseView.titles = @[@"All",@"SUCCESSFUL",@"FAILURE"];
@@ -102,7 +102,7 @@
 - (void)initView{
     self.isShowBottomLine = YES;
     [self.view addSubview:self.chooseView];
-    CGFloat ctnHeight = SCREEN_HEIGHT-64-self.chooseView.bounds.size.height;
+    CGFloat ctnHeight = SCREEN_HEIGHT-self.navBarheight-self.chooseView.bounds.size.height;
     UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.chooseView.frame), SCREEN_WIDTH, ctnHeight)];
     contentView.delegate = self;
     contentView.pagingEnabled = YES;

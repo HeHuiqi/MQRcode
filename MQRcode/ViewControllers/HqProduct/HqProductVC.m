@@ -33,10 +33,10 @@
     }
     self.title = @"List of Product";
     [self initView];
-    self.navBarView.layer.shadowPath = self.shadowPath.CGPath;
+//    self.navBarView.layer.shadowPath = self.shadowPath.CGPath;
 }
 - (void)initView{
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, BarHeight, SCREEN_WIDTH , SCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.navBarheight, SCREEN_WIDTH , SCREEN_HEIGHT-self.navBarheight) style:UITableViewStyleGrouped];
     _tableView.separatorColor = LineColor;
     _tableView.tableHeaderView = [UIView new];
     _tableView.delegate = self;

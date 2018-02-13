@@ -301,7 +301,8 @@
     HqHomeNews *hms = _homeDatas[indexPath.row];
     cell.titleLab.text = hms.title;
     cell.contentLab.text = hms.subTitle;
-    cell.hotIcon.hidden = hms.type==1;
+    BOOL isHiden = hms.type==1;
+    cell.hotIcon.hidden =  !isHiden;
     cell.leftIcon.image = [UIImage imageNamed:hms.iconName];
     
     return cell;
@@ -322,17 +323,12 @@
             if (code==1) {
                 HqGesturePasswordVC *gesturePasswordVC = [[HqGesturePasswordVC alloc] init];
                 _user = [HqUser mj_objectWithKeyValues:responseObject];
-//                NSString *gesturePassword = [PCCircleViewConst getGestureWithKey:gestureFinalSaveKey];
                 gesturePasswordVC.user = _user;
                 if (_user.hasGesture) {
                     gesturePasswordVC.type = GestureViewControllerTypeLogin;
                 }else{
                     gesturePasswordVC.type = GestureViewControllerTypeSetting;
                 }
-                
-//                gesturePasswordVC.type = GestureViewControllerTypeSetting;
-
-
                 Push(gesturePasswordVC);
             }else{
                 [Dialog simpleToast:msg];

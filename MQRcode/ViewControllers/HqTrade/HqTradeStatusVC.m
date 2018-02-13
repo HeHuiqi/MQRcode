@@ -58,8 +58,8 @@
 */
 
 - (void)initView{
-    
-    CGFloat ctnHeight = SCREEN_HEIGHT-64-45;
+    self.navBarView.hidden = YES;
+    CGFloat ctnHeight = SCREEN_HEIGHT-self.navBarheight-45;
    CGRect rect =CGRectMake(0, 0, SCREEN_WIDTH, ctnHeight);
     _tableView = [[UITableView alloc]initWithFrame:rect style:UITableViewStyleGrouped];
     self.automaticallyAdjustsScrollViewInsets = NO;

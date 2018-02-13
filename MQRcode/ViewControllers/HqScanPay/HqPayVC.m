@@ -36,9 +36,9 @@
 }
 - (void)initView{
     self.title = @"Transfer Accounts";
-    UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navBarView.frame), SCREEN_WIDTH, SCREEN_HEIGHT-64)];
+    UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navBarView.frame), SCREEN_WIDTH, SCREEN_HEIGHT-self.navBarheight)];
     contentView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    contentView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT-64);
+    contentView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT-self.navBarheight);
     [self.view addSubview:contentView];
     
     UIImageView *userPhoto = [[UIImageView alloc] init];

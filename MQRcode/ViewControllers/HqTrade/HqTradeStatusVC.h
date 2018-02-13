@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HqTradeStatusVC : UIViewController
+@interface HqTradeStatusVC : SuperVC
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *records;

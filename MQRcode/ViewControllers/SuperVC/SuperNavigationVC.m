@@ -26,22 +26,6 @@
     BOOL isPop = self.viewControllers.count==1 ? NO:YES;
     return isPop;
 }
-/*
-- (void)setNavagationStyle
-{
-    [[UINavigationBar appearance] setBarTintColor:NavigationBarColor];
-
-    self.navigationBar.barTintColor = NavigationBarColor;
-    self.navigationBar.shadowImage = [UIImage new];
-    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    
-    self.navigationBar.tintColor = [UIColor whiteColor] ;
-    self.navigationBar.translucent = NO;
-
-    self.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil];
-    
-}
-*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

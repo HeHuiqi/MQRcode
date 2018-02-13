@@ -7,13 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#define BarHeight 64
+
+#define HqDeviceHeight [UIScreen mainScreen].bounds.size.height
+
+#define  IS_NOT_IPHONE_X ((HqDeviceHeight < 812.0f) ? 1 : 0)
+
 #define HqTitleColor [UIColor whiteColor]
+#define HqTitleFontsize 18
+
+#define HqNavBarColor [UIColor orangeColor]
+#define HqBarBtnTintColor [UIColor blackColor]
+
 #define HqShadowHeight 2
-#define HqBarShadowHeight (BarHeight+HqShadowHeight)
+
 @interface SuperVC : UIViewController
 
 @property (nonatomic,strong) UIView *navBarView;
+@property (nonatomic,assign) CGFloat navBarheight;
+
 @property (nonatomic,strong) UILabel *titelLab;
 @property (nonatomic,strong) UIButton *leftBtn;
 @property (nonatomic,copy) NSString *leftBtnImageName;
@@ -23,8 +34,6 @@
 
 @property (nonatomic,assign) BOOL isShowBottomLine;
 @property (nonatomic,strong) UIView *bottomLine;
-
-@property (nonatomic,strong) UIBezierPath *shadowPath;
 
 -(void)backClick;
 - (void)backToVC:(NSString *)vcName;

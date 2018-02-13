@@ -20,12 +20,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="y9C-e3-Dce">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y9C-e3-Dce" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Eru-M8-XFE"/>
+                            <constraint firstAttribute="trailing" secondItem="y9C-e3-Dce" secondAttribute="trailing" id="YN0-nF-9cB"/>
+                            <constraint firstItem="y9C-e3-Dce" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="fVc-QE-AFR"/>
+                            <constraint firstItem="y9C-e3-Dce" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="gXM-2j-aEE"/>
+                            <constraint firstItem="y9C-e3-Dce" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="uFL-z1-1dd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-290" y="140"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppLaunch" width="375" height="667"/>
+    </resources>
 </document>

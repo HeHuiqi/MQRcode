@@ -43,7 +43,7 @@
     [_oldPasswordTf mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(contentView).offset(kZoomValue(leftSpace));
         make.right.equalTo(contentView).offset(-kZoomValue(leftSpace));
-        make.top.equalTo(contentView).offset(kZoomValue(leftSpace+64));
+    make.top.equalTo(contentView).offset(kZoomValue(leftSpace+self.navBarheight));
         make.height.mas_equalTo(kZoomValue(inputHeight));
     }];
     

@@ -29,7 +29,7 @@
 }
 - (HqMyPayCodeView *)payCodeView{
     if (!_payCodeView) {
-        _payCodeView = [[HqMyPayCodeView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width,  self.view.frame.size.height-64)];
+        _payCodeView = [[HqMyPayCodeView alloc] initWithFrame:CGRectMake(0, self.navBarheight, self.view.frame.size.width,  self.view.frame.size.height-self.navBarheight)];
         _payCodeView.backgroundColor = AppMainColor;
     }
     return _payCodeView;
