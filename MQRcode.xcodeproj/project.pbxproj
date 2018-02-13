@@ -10,6 +10,10 @@
 		67DCA8A84A3890D25A90B0EE /* libPods-MQRcode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F4E678F9C399D4A35C1281 /* libPods-MQRcode.a */; };
 		8E9D03982032A84300C78B79 /* temp_product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D03962032A84200C78B79 /* temp_product@2x.png */; };
 		8E9D03992032A84300C78B79 /* temp_product@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D03972032A84200C78B79 /* temp_product@3x.png */; };
+		8E9D039C2032B04200C78B79 /* HqPayCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D039B2032B04100C78B79 /* HqPayCodeView.m */; };
+		8E9D039F2032B76100C78B79 /* mrcode_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D039D2032B76000C78B79 /* mrcode_icon@3x.png */; };
+		8E9D03A02032B76100C78B79 /* mrcode_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D039E2032B76000C78B79 /* mrcode_icon@2x.png */; };
+		8E9D03A32032B8FE00C78B79 /* HqGenerateCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D03A22032B8FE00C78B79 /* HqGenerateCodeView.m */; };
 		8EC0B4291FFE407A00EF6981 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC0B4281FFE407A00EF6981 /* AppDelegate.m */; };
 		8EC0B42F1FFE407B00EF6981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC0B42D1FFE407B00EF6981 /* Main.storyboard */; };
 		8EC0B4311FFE407B00EF6981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC0B4301FFE407B00EF6981 /* Assets.xcassets */; };
@@ -155,9 +159,7 @@
 		8EF609132027F48C009C2A9A /* HqIdInfoInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF6085E2027F48C009C2A9A /* HqIdInfoInputView.m */; };
 		8EF609142027F48C009C2A9A /* HqScanPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF608652027F48C009C2A9A /* HqScanPayVC.m */; };
 		8EF609152027F48C009C2A9A /* HqScanResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF608682027F48C009C2A9A /* HqScanResultVC.m */; };
-		8EF609162027F48C009C2A9A /* HqScanPayAndCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF608692027F48C009C2A9A /* HqScanPayAndCodeVC.m */; };
 		8EF609172027F48C009C2A9A /* HqPaySuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF6086B2027F48C009C2A9A /* HqPaySuccessVC.m */; };
-		8EF609182027F48C009C2A9A /* HqMyPayCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF6086F2027F48C009C2A9A /* HqMyPayCodeView.m */; };
 		8EF609192027F48C009C2A9A /* HqConfirmPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF608702027F48C009C2A9A /* HqConfirmPayView.m */; };
 		8EF6091A2027F48C009C2A9A /* HqPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF608712027F48C009C2A9A /* HqPayVC.m */; };
 		8EF609212028140D009C2A9A /* trade_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF6091B2028140C009C2A9A /* trade_icon@2x.png */; };
@@ -199,6 +201,12 @@
 		753D954596DD8C8CC3526A23 /* Pods-MQRcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQRcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-MQRcode/Pods-MQRcode.release.xcconfig"; sourceTree = "<group>"; };
 		8E9D03962032A84200C78B79 /* temp_product@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp_product@2x.png"; sourceTree = "<group>"; };
 		8E9D03972032A84200C78B79 /* temp_product@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp_product@3x.png"; sourceTree = "<group>"; };
+		8E9D039A2032B04100C78B79 /* HqPayCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPayCodeView.h; sourceTree = "<group>"; };
+		8E9D039B2032B04100C78B79 /* HqPayCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPayCodeView.m; sourceTree = "<group>"; };
+		8E9D039D2032B76000C78B79 /* mrcode_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mrcode_icon@3x.png"; sourceTree = "<group>"; };
+		8E9D039E2032B76000C78B79 /* mrcode_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mrcode_icon@2x.png"; sourceTree = "<group>"; };
+		8E9D03A12032B8FE00C78B79 /* HqGenerateCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqGenerateCodeView.h; sourceTree = "<group>"; };
+		8E9D03A22032B8FE00C78B79 /* HqGenerateCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqGenerateCodeView.m; sourceTree = "<group>"; };
 		8EC0B4241FFE407A00EF6981 /* MQRcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQRcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC0B4271FFE407A00EF6981 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EC0B4281FFE407A00EF6981 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -438,15 +446,11 @@
 		8EF608632027F48C009C2A9A /* HqScanResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqScanResultVC.h; sourceTree = "<group>"; };
 		8EF608642027F48C009C2A9A /* HqPaySuccessVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPaySuccessVC.h; sourceTree = "<group>"; };
 		8EF608652027F48C009C2A9A /* HqScanPayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqScanPayVC.m; sourceTree = "<group>"; };
-		8EF608662027F48C009C2A9A /* HqScanPayAndCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqScanPayAndCodeVC.h; sourceTree = "<group>"; };
 		8EF608672027F48C009C2A9A /* HqPayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPayVC.h; sourceTree = "<group>"; };
 		8EF608682027F48C009C2A9A /* HqScanResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqScanResultVC.m; sourceTree = "<group>"; };
-		8EF608692027F48C009C2A9A /* HqScanPayAndCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqScanPayAndCodeVC.m; sourceTree = "<group>"; };
 		8EF6086A2027F48C009C2A9A /* HqScanPayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqScanPayVC.h; sourceTree = "<group>"; };
 		8EF6086B2027F48C009C2A9A /* HqPaySuccessVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPaySuccessVC.m; sourceTree = "<group>"; };
 		8EF6086D2027F48C009C2A9A /* HqConfirmPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqConfirmPayView.h; sourceTree = "<group>"; };
-		8EF6086E2027F48C009C2A9A /* HqMyPayCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqMyPayCodeView.h; sourceTree = "<group>"; };
-		8EF6086F2027F48C009C2A9A /* HqMyPayCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqMyPayCodeView.m; sourceTree = "<group>"; };
 		8EF608702027F48C009C2A9A /* HqConfirmPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqConfirmPayView.m; sourceTree = "<group>"; };
 		8EF608712027F48C009C2A9A /* HqPayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPayVC.m; sourceTree = "<group>"; };
 		8EF6091B2028140C009C2A9A /* trade_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trade_icon@2x.png"; sourceTree = "<group>"; };
@@ -857,6 +861,8 @@
 		8EF607B92027F48C009C2A9A /* HqImages */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D039E2032B76000C78B79 /* mrcode_icon@2x.png */,
+				8E9D039D2032B76000C78B79 /* mrcode_icon@3x.png */,
 				8EF607D82027F48C009C2A9A /* back@2x.png */,
 				8EF607DB2027F48C009C2A9A /* back@3x.png */,
 				8EF609C32029A01E009C2A9A /* Bill */,
@@ -1218,8 +1224,6 @@
 				8EF6086B2027F48C009C2A9A /* HqPaySuccessVC.m */,
 				8EF608672027F48C009C2A9A /* HqPayVC.h */,
 				8EF608712027F48C009C2A9A /* HqPayVC.m */,
-				8EF608662027F48C009C2A9A /* HqScanPayAndCodeVC.h */,
-				8EF608692027F48C009C2A9A /* HqScanPayAndCodeVC.m */,
 				8EF6086A2027F48C009C2A9A /* HqScanPayVC.h */,
 				8EF608652027F48C009C2A9A /* HqScanPayVC.m */,
 				8EF608632027F48C009C2A9A /* HqScanResultVC.h */,
@@ -1234,10 +1238,12 @@
 		8EF6086C2027F48C009C2A9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D039A2032B04100C78B79 /* HqPayCodeView.h */,
+				8E9D039B2032B04100C78B79 /* HqPayCodeView.m */,
 				8EF6086D2027F48C009C2A9A /* HqConfirmPayView.h */,
 				8EF608702027F48C009C2A9A /* HqConfirmPayView.m */,
-				8EF6086E2027F48C009C2A9A /* HqMyPayCodeView.h */,
-				8EF6086F2027F48C009C2A9A /* HqMyPayCodeView.m */,
+				8E9D03A12032B8FE00C78B79 /* HqGenerateCodeView.h */,
+				8E9D03A22032B8FE00C78B79 /* HqGenerateCodeView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1371,6 +1377,7 @@
 				8EF6098F20282155009C2A9A /* messages_icon@2x.png in Resources */,
 				8EF6098D20282155009C2A9A /* generate_qr_icon@2x.png in Resources */,
 				8EF608E52027F48C009C2A9A /* home_header_bg@3x.png in Resources */,
+				8E9D039F2032B76100C78B79 /* mrcode_icon@3x.png in Resources */,
 				8EF608772027F48C009C2A9A /* delete@3x.png in Resources */,
 				8EF609242028140D009C2A9A /* trade_icon@3x.png in Resources */,
 				8EF608AD2027F48C009C2A9A /* pay_scan_icon@3x.png in Resources */,
@@ -1386,6 +1393,7 @@
 				8EF608C02027F48C009C2A9A /* home_menu_icon@3x.png in Resources */,
 				8EF608EE2027F48C009C2A9A /* delete_icon@3x.png in Resources */,
 				8EF608E02027F48C009C2A9A /* cards_link@3x.png in Resources */,
+				8E9D03A02032B76100C78B79 /* mrcode_icon@2x.png in Resources */,
 				8EF608B22027F48C009C2A9A /* about_icon@3x.png in Resources */,
 				8EF608D52027F48C009C2A9A /* hqphone_icon@3x.png in Resources */,
 				8EC0B4341FFE407B00EF6981 /* LaunchScreen.storyboard in Resources */,
@@ -1504,6 +1512,7 @@
 				8EF608862027F48C009C2A9A /* UIFont+HqCustomFont.m in Sources */,
 				8EF608962027F48C009C2A9A /* IQTextView.m in Sources */,
 				8EF609082027F48C009C2A9A /* HqUser.m in Sources */,
+				8E9D039C2032B04200C78B79 /* HqPayCodeView.m in Sources */,
 				8EF608FF2027F48C009C2A9A /* HqBillCell.m in Sources */,
 				8EF608F42027F48C009C2A9A /* PCCircleViewConst.m in Sources */,
 				8EF608FB2027F48C009C2A9A /* SuperVC.m in Sources */,
@@ -1520,7 +1529,6 @@
 				8EF609A220283596009C2A9A /* HqProductVC.m in Sources */,
 				8EF609002027F48C009C2A9A /* HqButton.m in Sources */,
 				8EF609A9202836E4009C2A9A /* HqProduct.m in Sources */,
-				8EF609182027F48C009C2A9A /* HqMyPayCodeView.m in Sources */,
 				8EF6090B2027F48C009C2A9A /* HqAddCardInfoVC.m in Sources */,
 				8EF6089B2027F48C009C2A9A /* IQPreviousNextView.m in Sources */,
 				8EF6090E2027F48C009C2A9A /* HqCardDetailCell.m in Sources */,
@@ -1549,7 +1557,6 @@
 				8EF608832027F48C009C2A9A /* UILabel+ChangeLineSpaceAndWordSpace.m in Sources */,
 				8EF608F32027F48C009C2A9A /* PCCircle.m in Sources */,
 				8EF609172027F48C009C2A9A /* HqPaySuccessVC.m in Sources */,
-				8EF609162027F48C009C2A9A /* HqScanPayAndCodeVC.m in Sources */,
 				8EF608A52027F48C009C2A9A /* MBProgressHUD.m in Sources */,
 				8EF608942027F48C009C2A9A /* SGQRCodeGenerateManager.m in Sources */,
 				8EF608F92027F48C009C2A9A /* PCLockLabel.m in Sources */,
@@ -1572,6 +1579,7 @@
 				8EF609122027F48C009C2A9A /* HqCardCell.m in Sources */,
 				8EF609012027F48C009C2A9A /* HqHomeNews.m in Sources */,
 				8EF6087B2027F48C009C2A9A /* HqPickerView.m in Sources */,
+				8E9D03A32032B8FE00C78B79 /* HqGenerateCodeView.m in Sources */,
 				8EF609C2202995AF009C2A9A /* HqTradeStatusVC.m in Sources */,
 				8EF608902027F48C009C2A9A /* UIImage+ImageSize.m in Sources */,
 				8EF608F22027F48C009C2A9A /* HqInputView.m in Sources */,

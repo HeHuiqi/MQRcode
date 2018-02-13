@@ -7,59 +7,34 @@
 //
 
 #import "HqGenerateCodeVC.h"
-#import "HqMyPayCodeView.h"
-
+#import "HqGenerateCodeView.h"
+#import "HqGenerateCodeView.h"
 @interface HqGenerateCodeVC ()
 
-@property (nonatomic,strong) HqMyPayCodeView *payCodeView;
+@property (nonatomic,strong) HqGenerateCodeView *generateCodeView;
 
 
 @end
 
 @implementation HqGenerateCodeVC
-
+- (void)dealloc{
+    [self.generateCodeView stopGetPayCode];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.payCodeView];
+    [self.view addSubview:self.generateCodeView];
     self.title = @"MQR Code";
-    self.payCodeView.hidden = YES;
-    self.payCodeView.backgroundColor = [UIColor whiteColor];
-    [self getPayCode];
-
+    self.generateCodeView.backgroundColor = [UIColor whiteColor];
+     NSString *url = [NSString stringWithFormat:@"/transactions/codes/%@",_merchantOrderNo];
+    self.generateCodeView.codeUrl = url;
+    self.generateCodeView.autoRefresh = NO;
+    [self.generateCodeView startGetPayCode];
 }
-- (HqMyPayCodeView *)payCodeView{
-    if (!_payCodeView) {
-        _payCodeView = [[HqMyPayCodeView alloc] initWithFrame:CGRectMake(0, self.navBarheight, self.view.frame.size.width,  self.view.frame.size.height-self.navBarheight)];
-        _payCodeView.backgroundColor = AppMainColor;
+- (HqGenerateCodeView *)generateCodeView{
+    if (!_generateCodeView) {
+        _generateCodeView = [[HqGenerateCodeView alloc] initWithFrame:CGRectMake(0, self.navBarheight, self.view.frame.size.width,  self.view.frame.size.height-self.navBarheight)];
     }
-    return _payCodeView;
-}
-- (void)getPayCode{
-    NSString *url = [NSString stringWithFormat:@"/transactions/codes/%@",_merchantOrderNo];
-    [HqHttpUtil hqGetShowHudTitle:nil param:nil url:url complete:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
-        NSLog(@"==%@",responseObject);
-        
-        if (response.statusCode == 200) {
-            NSString *msg = [responseObject hq_objectForKey:@"message"];
-            int code = [[responseObject hq_objectForKey:@"code"] intValue];
-            if (code==1) {
-                NSString *payCode = [responseObject hq_objectForKey:@"collectCode"];
-                if (payCode.length>0) {
-                    self.payCodeView.payCodeInfo = payCode;
-                    self.payCodeView.hidden = NO;
-                }
-            }else{
-                [Dialog simpleToast:msg];
-            }
-        }else{
-            [Dialog simpleToast:kRequestError];
-        }
-    }];
-   
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return _generateCodeView;
 }
 
 /*

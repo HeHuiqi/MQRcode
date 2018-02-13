@@ -11,7 +11,6 @@
 #import "HqButton.h"
 #import "HqHomeCell.h"
 #import "HqScanPayVC.h"
-#import "HqScanPayAndCodeVC.h"
 #import "HqCardsVC.h"
 
 #import "HqGesturePasswordVC.h"
@@ -394,9 +393,6 @@
     }
     return  YES;
 }
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
