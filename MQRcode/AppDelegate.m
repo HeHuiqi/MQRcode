@@ -14,6 +14,8 @@
 
 #import "RegistVC.h"
 #import <AssertMacros.h>
+#import "AppDelegate+HqPushManager.h"
+
 @interface AppDelegate ()
 
 @end

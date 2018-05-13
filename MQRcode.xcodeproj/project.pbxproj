@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33DDE2E520A6C5CD00496F91 /* AppDelegate+HqPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DDE2E420A6C5CD00496F91 /* AppDelegate+HqPushManager.m */; };
 		67DCA8A84A3890D25A90B0EE /* libPods-MQRcode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F4E678F9C399D4A35C1281 /* libPods-MQRcode.a */; };
 		8E9D03982032A84300C78B79 /* temp_product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D03962032A84200C78B79 /* temp_product@2x.png */; };
 		8E9D03992032A84300C78B79 /* temp_product@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D03972032A84200C78B79 /* temp_product@3x.png */; };
@@ -197,6 +198,8 @@
 
 /* Begin PBXFileReference section */
 		14D405AC33D6E10B00113614 /* Pods-MQRcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQRcode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MQRcode/Pods-MQRcode.debug.xcconfig"; sourceTree = "<group>"; };
+		33DDE2E320A6C5CD00496F91 /* AppDelegate+HqPushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HqPushManager.h"; sourceTree = "<group>"; };
+		33DDE2E420A6C5CD00496F91 /* AppDelegate+HqPushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HqPushManager.m"; sourceTree = "<group>"; };
 		56F4E678F9C399D4A35C1281 /* libPods-MQRcode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MQRcode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753D954596DD8C8CC3526A23 /* Pods-MQRcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQRcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-MQRcode/Pods-MQRcode.release.xcconfig"; sourceTree = "<group>"; };
 		8E9D03962032A84200C78B79 /* temp_product@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp_product@2x.png"; sourceTree = "<group>"; };
@@ -505,6 +508,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33DDE2E220A6C5CD00496F91 /* HqPushManager */ = {
+			isa = PBXGroup;
+			children = (
+				33DDE2E320A6C5CD00496F91 /* AppDelegate+HqPushManager.h */,
+				33DDE2E420A6C5CD00496F91 /* AppDelegate+HqPushManager.m */,
+			);
+			path = HqPushManager;
+			sourceTree = "<group>";
+		};
 		822F2BEBCB2C3810BC224C49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +546,7 @@
 		8EC0B4261FFE407A00EF6981 /* MQRcode */ = {
 			isa = PBXGroup;
 			children = (
+				33DDE2E220A6C5CD00496F91 /* HqPushManager */,
 				8EC0B4271FFE407A00EF6981 /* AppDelegate.h */,
 				8EC0B4281FFE407A00EF6981 /* AppDelegate.m */,
 				8EC0B4301FFE407B00EF6981 /* Assets.xcassets */,
@@ -1482,7 +1495,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1538,6 +1551,7 @@
 				8EF608932027F48C009C2A9A /* SGQRCodeScanManager.m in Sources */,
 				8EF608992027F48C009C2A9A /* IQBarButtonItem.m in Sources */,
 				8EF609102027F48C009C2A9A /* HqCardsVC.m in Sources */,
+				33DDE2E520A6C5CD00496F91 /* AppDelegate+HqPushManager.m in Sources */,
 				8EF608812027F48C009C2A9A /* UITextField+EnlargeTouchArea.m in Sources */,
 				8EF609062027F48C009C2A9A /* WecomeVC.m in Sources */,
 				8EF6091A2027F48C009C2A9A /* HqPayVC.m in Sources */,

@@ -11,6 +11,8 @@
 @implementation ProjectConst
 
 NSString * const kToken = @"iToken";
+NSString * const kDeviceToken = @"kDeviceToken";
+
 NSString * const kisLogin = @"isLogin";
 NSString * const kisFirsUse = @"isFirsUse";
 NSString * const kUserId = @"UserId";

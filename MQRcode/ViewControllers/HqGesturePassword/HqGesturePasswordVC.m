@@ -284,7 +284,7 @@
                 [self.msgLabel showWarnMsg:HqInputDrawPasswordSuccess];
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }else{
-                [Dialog simpleToast:msg];
+                [Dialog toastCenter:msg];
 
                 int remainRetries = [[responseObject hq_objectForKey:@"remainRetries"] intValue];
                 if (remainRetries == 0) {

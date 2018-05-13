@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h>
 
 typedef NS_ENUM(NSUInteger, HqSetRootVC) {
     HqSetRootVCWecome,
@@ -14,7 +15,7 @@ typedef NS_ENUM(NSUInteger, HqSetRootVC) {
     HqSetRootVCHome,
 };
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

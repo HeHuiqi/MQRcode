@@ -6,5 +6,6 @@ target 'MQRcode' do
     pod 'SDWebImage'
     pod 'MJExtension', '~> 3.0.13'
     pod 'MMDrawerController', '~> 0.6.0'
-    
+    pod 'JPush'
+
 end

@@ -11,6 +11,8 @@
 @interface ProjectConst : NSObject
 
 extern NSString * const kToken;
+extern NSString * const kDeviceToken;
+
 extern NSString * const kisLogin;
 extern NSString * const kisFirsUse;
 extern NSString * const kUserId;

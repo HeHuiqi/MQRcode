@@ -73,9 +73,9 @@
 }
 - (void)initData{
     self.isOpen = NO;
-//    if ([AppDelegate shareApp].isInputGesturePassword) {
-//        [self requestUerInfo];
-//    }
+    if ([AppDelegate shareApp].isInputGesturePassword) {
+        [self requestUerInfo];
+    }
     _homeDatas = [[NSMutableArray alloc] init];
     HqHomeNews *hms = [[HqHomeNews alloc] init];
     hms.title = @"Sliver and plan";
