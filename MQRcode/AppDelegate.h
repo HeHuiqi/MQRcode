@@ -23,6 +23,7 @@ typedef NS_ENUM(NSUInteger, HqSetRootVC) {
 + (void)setRootVC:(HqSetRootVC)type;
 
 @property (nonatomic,assign) BOOL isInputGesturePassword;
+@property (nonatomic,assign) BOOL isScanRecive;//是否主动扫码收款
 
 @end
 

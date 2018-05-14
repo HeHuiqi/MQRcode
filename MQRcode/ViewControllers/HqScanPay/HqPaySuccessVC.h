@@ -11,5 +11,6 @@
 @interface HqPaySuccessVC : SuperVC
 
 @property (nonatomic,strong) NSDictionary *payInfo;
+@property (nonatomic,assign) BOOL isPushShow;
 
 @end

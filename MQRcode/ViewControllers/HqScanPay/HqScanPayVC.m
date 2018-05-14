@@ -219,6 +219,7 @@
                 payVC.bill = bill;
                 Push(payVC);
                 */
+                [AppDelegate shareApp].isScanRecive = YES;
                 HqPaySuccessVC *paySuccessVC = [[HqPaySuccessVC alloc] init];
                 paySuccessVC.payInfo = [responseObject hq_objectForKey:@"payInfo"];
                 Push(paySuccessVC);

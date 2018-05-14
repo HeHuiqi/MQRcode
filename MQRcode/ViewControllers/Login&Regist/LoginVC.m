@@ -166,7 +166,7 @@
                 NSString *token = [responseObject hq_objectForKey:@"token"];
                 SetUserDefault(token, kToken);
                 SetUserDefault(@"1", kisLogin);
-                
+                [self uploadDeviceToken];
                 AppDelegate *app = [AppDelegate shareApp];
                 app.isInputGesturePassword = NO;
                 [AppDelegate setRootVC:HqSetRootVCHome];
@@ -210,6 +210,21 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self.view endEditing:YES];
     return YES;
+}
+- (void)uploadDeviceToken{
+    NSString *hqDevicetoken = GetUserDefault(kDeviceToken);
+    if (hqDevicetoken.length > 0) {
+        [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
+            [HqHttpUtil hqPut:@{@"deviceType":@"iOS",@"token":registrationID} url:@"/users/tokens" complete:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+                NSLog(@"上传PushToken==%@",responseObject);
+                if (response.statusCode==200) {
+                    
+                }
+                
+            }];
+        }];
+    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

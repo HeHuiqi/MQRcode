@@ -20,7 +20,12 @@
     [super viewDidLoad];
     [self initView];
 }
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [AppDelegate shareApp].isScanRecive = NO;
+}
 - (void)initView{
+    self.title = @"Success";
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.navBarheight, SCREEN_WIDTH, SCREEN_HEIGHT-self.navBarheight) style:UITableViewStyleGrouped];
     _tableView.separatorColor = LineColor;
     _tableView.delegate = self;
@@ -79,7 +84,11 @@
 
 
 - (void)backClick{
-    [self backToVC:@"HqProductVC"];
+    if (self.isPushShow) {
+        Dismiss();
+    }else{
+        [self backToVC:@"HqProductVC"];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
